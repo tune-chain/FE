@@ -1,24 +1,42 @@
-export default function Header() {
-    return (
-      <div className="w-full h-16 bg-black/50 flex justify-between items-center px-8">
-        <div className="flex gap-4">
-          <button className="w-8 h-8 bg-black/70 opacity-60 rounded-2xl flex justify-center items-center">
-            {/* Left Arrow */}
-            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M11.03 0.97L4.56 8.5L11.03 15.97" stroke="white" />
-            </svg>
-          </button>
-          <button className="w-8 h-8 bg-black/70 opacity-60 rounded-2xl flex justify-center items-center">
-            {/* Right Arrow */}
-            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.97 0.97L11.44 8.5L4.97 15.97" stroke="white" />
-            </svg>
-          </button>
+'use client';
+
+import React from 'react';
+import Image from 'next/image';
+import { ArrowLeftIcon, SearchIcon } from '../icons/SidebarIcons';
+
+const Header: React.FC = () => {
+  return (
+    <div className="w-full h-16 px-6 bg-neutral-900 border-b border-neutral-800">
+      <div className="max-w-[1440px] mx-auto h-full flex items-center justify-between">
+        {/* Left: Logo */}
+        <div className="flex items-center gap-2 min-w-[180px]">
+          <Image src="/logo.png" alt="Logo" width={150} height={50} />
         </div>
-        <div className="flex items-center gap-4">
-          <span className="text-neutral-400 font-bold">Sign up</span>
-          <button className="px-8 py-2 rounded-full bg-white text-black font-bold">Log in</button>
+
+        {/* Center: Search Bar */}
+        <div className="flex-1 max-w-xl mx-6">
+          <div className="w-full h-10 px-3 flex items-center gap-3 bg-neutral-800 rounded-xl border border-violet-100/5">
+            <SearchIcon className="w-4 h-4 text-white" />
+            <input
+              type="text"
+              placeholder="Search"
+              className="flex-1 bg-transparent text-sm text-white placeholder-neutral-400 focus:outline-none"
+            />
+          </div>
+        </div>
+
+        {/* Right: Auth Buttons */}
+        <div className="flex items-center gap-3 min-w-[160px] justify-end">
+          <button className="text-sm font-medium text-white px-5 py-1.5 rounded-full hover:bg-neutral-700 transition">
+            Login
+          </button>
+          <button className="text-sm font-medium text-black bg-white px-4 py-2 rounded-full hover:bg-zinc-200 transition">
+            Sign Up
+          </button>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+};
+
+export default Header;
