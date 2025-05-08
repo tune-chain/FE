@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Federated Music Recommendation Architecture</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
+    .column { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+    .row { display: flex; justify-content: space-around; align-items: start; margin-bottom: 40px; }
+    .box { background: white; border-radius: 10px; padding: 20px; width: 250px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
+    .arrow-down { font-size: 1.5rem; margin: 10px 0; }
+    h2 { margin-top: 0; }
+    .line { width: 100%; height: 2px; background-color: #ccc; margin: 20px 0; }
+    .label { font-weight: bold; color: #333; margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <h1>Federated Learning Music Recommendation System: Full Interaction Flow</h1>
+
+  <div class="row">
+    <div class="column">
+      <div class="box">
+        <div class="label">🎧 Frontend (Next.js)</div>
+        <div>곡 등록, 청취, 추천 요청<br/>지갑 연동, 보상 요청</div>
+      </div>
+      <div class="arrow-down">⬇️</div>
+      <div class="box">
+        <div class="label">🌐 Backend (Node.js)</div>
+        <div>곡 데이터 저장<br/>Spotify API 호출<br/>연합학습 및 컨트랙트 연동</div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="box">
+        <div class="label">🧠 Federated Learning (Flower)</div>
+        <div>로컬 학습 (Autoencoder)<br/>중앙 서버: Matrix Factorization</div>
+      </div>
+      <div class="arrow-down">⬇️</div>
+      <div class="box">
+        <div class="label">📊 Model Evaluator</div>
+        <div>학습 성능 평가<br/>기여도 계산</div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="box">
+        <div class="label">💰 Smart Contract (EVM or Sui)</div>
+        <div>기여도 기록<br/>보상 토큰 전송<br/>보상 청구 처리</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="line"></div>
+
+  <h2>🔄 주요 상호작용 흐름</h2>
+  <ul>
+    <li>사용자는 프론트에서 곡을 등록하고 청취 기록을 남김</li>
+    <li>백엔드는 Spotify API로 곡 분석 데이터를 저장</li>
+    <li>로컬에서는 Autoencoder로 사용자 취향 학습 후 bottleneck vector 전송</li>
+    <li>서버는 Matrix Factorization으로 유사 사용자 분석 및 추천 생성</li>
+    <li>서버는 학습 기여도를 평가하고 스마트컨트랙트에 기록</li>
+    <li>사용자는 프론트에서 보상 청구 트리거 → 컨트랙트에서 토큰 수령</li>
+  </ul>
+</body>
+</html>
