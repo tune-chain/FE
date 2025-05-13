@@ -34,15 +34,13 @@ const mockPlaylists = [
 export default function PlayerPage() {
   return (
     <div className="flex flex-col h-screen">
-      {/* 헤더는 항상 최상단 */}
       <Header />
 
-      {/* 메인 컨텐츠 영역 */}
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
 
-        <main className="flex-1 bg-neutral-800 overflow-y-scroll">
-          <div className="px-8 pt-8 space-y-10">
+        <main className="flex-1 bg-neutral-900 overflow-y-scroll">
+          <div className="px-10 pt-6 space-y-10"> 
             <PlaylistSlider title="Recommendation" items={mockPlaylists} />
             <PlaylistSlider title="Recent" items={mockPlaylists} />
           </div>
