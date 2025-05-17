@@ -1,7 +1,9 @@
+'use client'
 import Header from './Header';
 import Sidebar from './Sidebar';
 import PlaylistSlider from './PlaylistSlider';
 import PlayerBar from './PlayerBar';
+
 
 const mockPlaylists = [
   {
@@ -34,11 +36,9 @@ const mockPlaylists = [
 export default function PlayerPage() {
   return (
     <div className="flex flex-col h-screen">
-      <Header />
-
+        <Header />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
-
         <main className="flex-1 bg-neutral-900 overflow-y-scroll">
           <div className="px-10 pt-6 space-y-10"> 
             <PlaylistSlider title="Recommendation" items={mockPlaylists} />
